@@ -1,0 +1,5 @@
+STEPS TO CREATE VITE PROJECT
+    1. npm create vite@latest . -- --template react
+    2. npm install
+    3. npm install react-router
+    4. npm run dev
