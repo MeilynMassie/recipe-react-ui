@@ -6,8 +6,8 @@ import NotFoundPage from '../pages/NotFoundPage'
 function AppRouter() {
   return (
     <Routes>
-      <Route path="/" element={<HomePage />} />
-      <Route path="/login" element={<LoginPage />} />
+      <Route path="/" element={<LoginPage />} />
+      <Route path="/home" element={<HomePage />} />
       <Route path="/notfound" element={<NotFoundPage />} />
     </Routes>
   )
