@@ -1,9 +1,10 @@
-### Necessities List
+## Necessities List
+
     NOTE: ONLY CREATE GENERIC PAGES WITH NECESSARY INFO. FIXING UI IS LATER PROBLEM
-    1. Connect spring boot api
-    2. Add a view to display recipes
+    1. Add a view to display recipes
         2a. UI could be like someone opening a recipe box and filtering through it
-    3. Maybe create packages for certain features used across all three microservices
+    2. Maybe create packages for certain features used across all three microservices
+    3. Create a register new chef page
 
 ## Not Needed Nice Features
 

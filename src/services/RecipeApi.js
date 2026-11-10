@@ -1,4 +1,4 @@
-import { SPRING_API_URL } from '../services/Constants'
+import { SPRING_API_URL } from '../services/Helpers'
 
 
 export async function getRecipes(token) {
