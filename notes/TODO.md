@@ -4,7 +4,7 @@
     1. Add a view to display recipes
         2a. UI could be like someone opening a recipe box and filtering through it
     2. Maybe create packages for certain features used across all three microservices
-    3. Create a register new chef page
+    3. Add JWT token
 
 ## Not Needed Nice Features
 

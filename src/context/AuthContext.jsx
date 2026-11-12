@@ -6,7 +6,10 @@ export function AuthProvider({ children }) {
     const [chef, setChef] = useState(null)
 
     return (
-        <AuthContext.Provider value={{ chef, setChef }}>
+        <AuthContext.Provider value={{ 
+            chef, 
+            setChef
+        }}>
             {children}
         </AuthContext.Provider>
     )

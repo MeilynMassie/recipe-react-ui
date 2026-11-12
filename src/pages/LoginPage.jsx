@@ -1,58 +1,47 @@
 import { useState } from 'react';
-import { useNavigate } from "react-router";
-import { verifyUser } from '../services/AuthService'
-import { useAuth } from '../context/AuthContext'
+import  LoginForm  from '../components/LoginForm'
+import  RegisterForm  from '../components/RegisterForm'
+import '../styles/auth-forms.css'
+
 
 function LoginPage() {
-  const navigate = useNavigate();
   const [errorMessage, setErrorMessage] = useState('');
-  const { setChef } = useAuth();
-
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const formData = new FormData(event.currentTarget);
-    const username = formData.get('login');
-    const password = formData.get('password');
-    try {
-        const token = await verifyUser(
-            username,
-            password
-        );
-        setChef({
-          username: username,
-          token: token
-        });
-        navigate('/home', { replace: true });
-    } catch (error) {
-        // Display red banner with incorrect whatever
-        console.error(error.message);
-        setErrorMessage(error.message);
-    }
-  }
+  const [pageMode, setPageMode] = useState('');
 
   return (
-    <main>
-      <h1>Sign In</h1>
-      {/* Message box */}
-      {errorMessage && <p class="alert alert-danger" role="alert">{errorMessage}</p>}
+    <main className="auth-page">
+      <div className="auth-content">
+        {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
 
-      {/* Login Form */}
-      <form onSubmit={handleSubmit}>
-        <label>
-          Username or email
-          <input name="login" required />
-        </label>
-        <label>
-          Password
-          <input
-            name="password"
-            type="password"
-            required
-          />
-        </label>
+        {pageMode === '' && (
+          <section className="auth-card auth-choice">
+            <h1>Welcome to SaltyChef</h1>
+            <p className="text-muted mb-4">Sign in or create an account to get cooking.</p>
+            <div className="auth-actions">
+              <button className="btn btn-primary" onClick={() => {
+                setPageMode('login');
+                setErrorMessage('');
+              }}>
+                Login
+              </button>
+              <button className="btn btn-outline-primary" onClick={() => {
+                setPageMode('register');
+                setErrorMessage('');
+              }}>
+                Register
+              </button>
+            </div>
+          </section>
+        )}
 
-        <button type="submit">Sign In</button>
-      </form>
+        {pageMode === 'login' && (
+          <LoginForm setErrorMessage={setErrorMessage} />
+        )}
+
+        {pageMode === 'register' && (
+          <RegisterForm setErrorMessage={setErrorMessage} />
+        )}
+      </div>
     </main>
   )
 }
