@@ -7,9 +7,9 @@ import Card from 'react-bootstrap/Card'
 import Form from 'react-bootstrap/Form'
 import Button from 'react-bootstrap/Button'
 
-import { createRecipe } from '../models/Recipe'
-import { createIngredient } from '../models/Ingredient'
-import { createInstruction } from '../models/Instruction'
+import { createRecipe } from '../../models/Recipe'
+import { createIngredient } from '../../models/Ingredient'
+import { createInstruction } from '../../models/Instruction'
 
 function RecipeForm({ initialRecipe, onSubmit }) {
     const [recipe, setRecipe] = useState(() =>

@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router";
-import { createChef } from '../services/AuthService'
-import { useAuth } from '../context/AuthContext'
+import { createChef } from '../../services/AuthService'
+import { useAuth } from '../../context/AuthContext'
 
 function RegisterForm({setErrorMessage}) {
   const navigate = useNavigate();

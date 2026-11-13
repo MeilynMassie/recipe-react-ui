@@ -1,3 +1,5 @@
+# TODO List
+
 ## Necessities List
 
     NOTE: ONLY CREATE GENERIC PAGES WITH NECESSARY INFO. FIXING UI IS LATER PROBLEM
@@ -5,6 +7,7 @@
         2a. UI could be like someone opening a recipe box and filtering through it
     2. Maybe create packages for certain features used across all three microservices
     3. Add JWT token
+    4. Add history with back button
 
 ## Not Needed Nice Features
 

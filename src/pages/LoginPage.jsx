@@ -1,6 +1,6 @@
 import { useState } from 'react';
-import  LoginForm  from '../components/LoginForm'
-import  RegisterForm  from '../components/RegisterForm'
+import  LoginForm  from '../components/forms/LoginForm'
+import  RegisterForm  from '../components/forms/RegisterForm'
 import '../styles/auth-forms.css'
 
 
