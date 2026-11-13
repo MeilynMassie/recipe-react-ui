@@ -1,0 +1,40 @@
+.auth-page {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 2rem 1rem;
+}
+
+.auth-content {
+  width: min(100%, 28rem);
+}
+
+.auth-card {
+  width: 100%;
+  box-sizing: border-box;
+  padding: clamp(1.5rem, 5vw, 2.5rem);
+  border: 1px solid var(--bs-border-color);
+  border-radius: 1rem;
+  background: var(--bs-body-bg);
+  box-shadow: 0 1rem 2.5rem rgba(33, 37, 41, 0.12);
+  text-align: left;
+}
+
+.auth-card h1 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2rem, 7vw, 2.5rem);
+  letter-spacing: -0.04em;
+  text-align: center;
+}
+
+.auth-form,
+.auth-actions {
+  display: grid;
+  gap: 1rem;
+}
+
+.auth-choice {
+  text-align: center;
+}

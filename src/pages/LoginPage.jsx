@@ -1,24 +1,47 @@
+import { useState } from 'react';
+import  LoginForm  from '../components/forms/LoginForm'
+import  RegisterForm  from '../components/forms/RegisterForm'
+import '../styles/auth-forms.css'
+
+
 function LoginPage() {
+  const [errorMessage, setErrorMessage] = useState('');
+  const [pageMode, setPageMode] = useState('');
+
   return (
-    <main>
-      <h1>Sign In</h1>
-      <form>
-        <label>
-          Username or email
-          <input name="login" required />
-        </label>
+    <main className="auth-page">
+      <div className="auth-content">
+        {errorMessage && <div className="alert alert-danger" role="alert">{errorMessage}</div>}
 
-        <label>
-          Password
-          <input
-            name="password"
-            type="password"
-            required
-          />
-        </label>
+        {pageMode === '' && (
+          <section className="auth-card auth-choice">
+            <h1>Welcome to SaltyChef</h1>
+            <p className="text-muted mb-4">Sign in or create an account to get cooking.</p>
+            <div className="auth-actions">
+              <button className="btn btn-primary" onClick={() => {
+                setPageMode('login');
+                setErrorMessage('');
+              }}>
+                Login
+              </button>
+              <button className="btn btn-outline-primary" onClick={() => {
+                setPageMode('register');
+                setErrorMessage('');
+              }}>
+                Register
+              </button>
+            </div>
+          </section>
+        )}
 
-        <button type="submit">Sign In</button>
-      </form>
+        {pageMode === 'login' && (
+          <LoginForm setErrorMessage={setErrorMessage} />
+        )}
+
+        {pageMode === 'register' && (
+          <RegisterForm setErrorMessage={setErrorMessage} />
+        )}
+      </div>
     </main>
   )
 }

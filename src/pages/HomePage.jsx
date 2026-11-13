@@ -1,13 +1,16 @@
-import RecipeForm from '../components/RecipeForm'
+import RecipeForm from '../components/forms/RecipeForm'
+import { useAuth } from '../context/AuthContext'
+import { capitalizeWords } from '../services/Helpers'
+
+
 
 function HomePage() {
-    // TODO: Change to be dynamic with login
-    const chef = 'Dope'
+    const { chef } = useAuth()
     return (
       <main>
           <h1>Welcome to Salty Chef's Kitchen!</h1>
-          <h3>It is nice to meet you Chef {chef}!</h3>
-          < RecipeForm/>    
+          <h3>It is nice to meet you Chef {capitalizeWords(chef?.username)}!</h3>
+          < RecipeForm />    
       </main>
     )
 }
